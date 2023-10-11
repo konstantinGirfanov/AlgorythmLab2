@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
         
+        <Button Width="100" Height="50" Content="Towers" FontSize="17" Name="TowersButton" Click="TowersButton_Click" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Width="100" Height="50" Content="Fractal" FontSize="17" Name="FractalButton" Click="FractalButton_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2"/>
+
+        <TextBlock Text="Выберите своего бойца" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 100" FontSize="17" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>
