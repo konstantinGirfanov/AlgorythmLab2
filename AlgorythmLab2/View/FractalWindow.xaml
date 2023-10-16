@@ -1,0 +1,28 @@
+﻿<Window x:Class="AlgorythmLab2.View.FractalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlgorythmLab2.View"
+        mc:Ignorable="d"
+        Title="FractalWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Depth:" FontSize="17"
+                 VerticalAlignment="Center" Margin="10,0,533,0" Grid.ColumnSpan="2" Height="23"/>
+        <TextBox Width="100" Height="30" FontSize="17" HorizontalAlignment="Left" Name="DepthTextBox"
+                 VerticalAlignment="Bottom" Margin="10 0 0 20"/>
+        <Button Width="100" Height="30" Name="DrawButton" Content="Draw" FontSize="17" Click="DrawButton_Click"
+                HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 10 20"/>
+
+        <Canvas Name="image" Margin="5" Grid.Column="1" Grid.RowSpan="2"></Canvas>
+    </Grid>
+</Window>
