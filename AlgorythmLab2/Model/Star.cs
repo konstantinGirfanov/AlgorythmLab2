@@ -10,6 +10,11 @@ namespace AlgorythmLab2.Model
     {
         private List<Point> _points;
 
+        public Star()
+        {
+            _points = new List<Point>();
+        }
+
         public void AddPoint(Point point)
         {
             _points.Add(point);
