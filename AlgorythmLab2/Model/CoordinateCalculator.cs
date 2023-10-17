@@ -61,8 +61,8 @@ namespace AlgorythmLab2.Model
                 if (level < _depth)
                 {
                     var newrad = r * _scale;
-                    var lx2 = (int)(x + (r + newrad) * Math.Cos(angleT));
-                    var ly2 = (int)(y + (r + newrad) * Math.Sin(angleT));
+                    var lx2 = x + (r + newrad) * Math.Cos(angleT);
+                    var ly2 = y + (r + newrad) * Math.Sin(angleT);
                     if (i != skip && i != 5)
                         CalculateStar(level + 1, lx2, ly2, newrad, i, !isRotate);
 
