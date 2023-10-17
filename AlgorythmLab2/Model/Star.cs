@@ -12,7 +12,7 @@ namespace AlgorythmLab2.Model
 
         public void AddPoint(Point point)
         {
-            
+            _points.Add(point);
         }
 
         public List<Point> GetPoints()
