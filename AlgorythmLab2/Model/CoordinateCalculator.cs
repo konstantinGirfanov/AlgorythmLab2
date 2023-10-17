@@ -38,6 +38,13 @@ namespace AlgorythmLab2.Model
             if(depth <= 0 || depth >= 7) return;
             _depth = depth;
         }
+        
+        public void Execute(double xmid, double ymid)
+        {
+            Stars1.Clear();
+            Stars2.Clear();
+            CalculateStar(1, xmid, ymid, 100, -1);
+        }
 
         private void CalculateStar(int level, double x, double y, double r, int skip, bool isRotate = true)
         {
