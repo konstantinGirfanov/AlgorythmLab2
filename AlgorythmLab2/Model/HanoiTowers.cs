@@ -38,9 +38,9 @@ namespace AlgorythmLab2.Model
             if (k > 1) SolutionHanoibns(k - 1, c, b, a);
         }
 
-        public static long[] TakeMeasurements(int countOfRings)
+        public static double[] TakeMeasurements(int countOfRings)
         {
-            long[] averageTimes = new long[countOfRings];
+            double[] averageTimes = new double[countOfRings];
             for (int i = 1; i <= countOfRings; i++)
             {
                 List<long> timesOnValue = new List<long>();
@@ -51,7 +51,7 @@ namespace AlgorythmLab2.Model
                     timesOnValue.Add(ht.time);
                 }
 
-                averageTimes[i - 1] = (long)timesOnValue.Average();
+                averageTimes[i - 1] = timesOnValue.Average();
             }
 
             return averageTimes;
