@@ -9,22 +9,22 @@ namespace AlgorythmLab2.Model
 {
     public class CoordinateCalculator
     {
-        private double _scale; //0.35
+        private double _scale = 0.35;
         private int _depth;
 
-        public List<Star> Stars1
+        public List<Star> Stars
         {
-            get => new List<Star>(Stars1);
-        }
-        
-        public List<Polyline> Stars2
-        {
-            get => new List<Polyline>(Stars2);
+            get => new List<Star>(Stars);
         }
 
-        public CoordinateCalculator(double scale, int depth)
+        public List<Polyline> StarsPolylines
         {
-            _scale = scale;
+            get => new List<Polyline>(StarsPolylines);
+        }
+
+        public CoordinateCalculator(int depth)
+        {
+            //_scale = scale;
             _depth = depth;
         }
 
@@ -35,14 +35,14 @@ namespace AlgorythmLab2.Model
 
         public void ChangeDepth(int depth)
         {
-            if(depth <= 0 || depth >= 7) return;
+            if (depth <= 0 || depth >= 7) return;
             _depth = depth;
         }
-        
+
         public void Execute(double xmid, double ymid)
         {
-            Stars1.Clear();
-            Stars2.Clear();
+            Stars.Clear();
+            StarsPolylines.Clear();
             CalculateStar(1, xmid, ymid, 100, -1);
         }
 
@@ -75,9 +75,9 @@ namespace AlgorythmLab2.Model
 
                 }
             }
-            
-            Stars1.Add(star1);
-            Stars2.Add(star2);
+
+            Stars.Add(star1);
+            StarsPolylines.Add(star2);
         }
     }
 }

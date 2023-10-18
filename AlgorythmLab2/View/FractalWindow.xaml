@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AlgorythmLab2.View"
         mc:Ignorable="d"
         Title="FractalWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Name ="FractalGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition />
