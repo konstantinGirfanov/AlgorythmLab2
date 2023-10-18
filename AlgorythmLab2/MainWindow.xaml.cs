@@ -1,15 +1,17 @@
 ﻿using AlgorythmLab2.View;
+using System.Windows;
 
 namespace AlgorythmLab2
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
         }
 
         private void TowersButton_Click(object sender, System.Windows.RoutedEventArgs e)
