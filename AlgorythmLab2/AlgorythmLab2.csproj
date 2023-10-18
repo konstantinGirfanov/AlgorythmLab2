@@ -103,7 +103,10 @@
     <Compile Include="Model\Stage.cs" />
     <Compile Include="Model\Star.cs" />
     <Compile Include="ViewModel\FractalDrawer.cs" />
+
+    <Compile Include="ViewModel\HanoiAnimator.cs" />
     <Compile Include="ViewModel\GraphicBuilder.cs" />
+
     <Compile Include="View\FractalWindow.xaml.cs">
       <DependentUpon>FractalWindow.xaml</DependentUpon>
     </Compile>

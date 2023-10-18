@@ -12,7 +12,9 @@ namespace AlgorythmLab2.ViewModel
             CoordinateCalculator calculator = new CoordinateCalculator(depth);
             calculator.Execute(midX, midY);
             foreach (var line in calculator.StarsPolylines)
-                fractalWindow.FractalGrid.Children.Add(line);
+            {
+                fractalWindow.image.Children.Add(line);
+            }
         }
     }
 }
