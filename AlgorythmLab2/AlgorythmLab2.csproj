@@ -54,6 +54,7 @@
     <Compile Include="Model\HanoiTowers.cs" />
     <Compile Include="Model\Star.cs" />
     <Compile Include="ViewModel\FractalDrawer.cs" />
+    <Compile Include="ViewModel\HanoiAnimator.cs" />
     <Compile Include="View\FractalWindow.xaml.cs">
       <DependentUpon>FractalWindow.xaml</DependentUpon>
     </Compile>

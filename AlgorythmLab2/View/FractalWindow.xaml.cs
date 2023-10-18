@@ -21,13 +21,11 @@ namespace AlgorythmLab2.View
     /// </summary>
     public partial class FractalWindow : Window
     {
-        Window currentWindow = Application.Current.MainWindow;
 
         public FractalWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
-            Loaded += FractalWindow_Loaded;
         }
 
         private void DrawButton_Click(object sender, RoutedEventArgs e)
@@ -37,12 +35,7 @@ namespace AlgorythmLab2.View
                 MessageBox.Show("Глубина задана неверно. Задайте значение глубины рекурсии корректно и попробуйте снова", "Ошибка считывания глубины", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            FractalDrawer drawer = new FractalDrawer(this, depth/*, currentWindow.Width / 2, currentWindow.Height / 2*/);
-        }
-
-        private void FractalWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-
+            new FractalDrawer(this, depth/*, currentWindow.Width / 2, currentWindow.Height / 2*/);
         }
     }
 }

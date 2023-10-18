@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlgorythmLab2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,12 +20,16 @@ namespace AlgorythmLab2.View
     /// </summary>
     public partial class TowersWindow : Window
     {
+
+
         public TowersWindow()
         {
             InitializeComponent();
-        }
+            WindowState = WindowState.Maximized;
+           
 
-        private void NextStepButton_Click(object sender, RoutedEventArgs e)
+        }
+    private void NextStepButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -36,7 +41,12 @@ namespace AlgorythmLab2.View
 
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Int32.TryParse(RingsCountTextBox.Text, out int ringsCount) == false)
+            {
+                MessageBox.Show("Задайте количество колец корректно и попробуйте снова", "Ошибка считывания количества колец", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            new HanoiAnimator(this, ringsCount, 0);
         }
     }
 }
