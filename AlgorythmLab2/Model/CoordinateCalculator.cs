@@ -16,6 +16,7 @@ namespace AlgorythmLab2.Model
         public CoordinateCalculator(int depth)
         {
             //_scale = scale;
+            StarsPolylines = new List<Polyline>();
             _depth = depth;
         }
 
