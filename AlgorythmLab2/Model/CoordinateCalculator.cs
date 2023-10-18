@@ -12,15 +12,9 @@ namespace AlgorythmLab2.Model
         private double _scale = 0.35;
         private int _depth;
 
-        public List<Star> Stars
-        {
-            get => new List<Star>(Stars);
-        }
+        public List<Star> Stars { get; }
 
-        public List<Polyline> StarsPolylines
-        {
-            get => new List<Polyline>(StarsPolylines);
-        }
+        public List<Polyline> StarsPolylines { get; }
 
         public CoordinateCalculator(int depth)
         {
@@ -71,8 +65,9 @@ namespace AlgorythmLab2.Model
                     var lx2 = x + (r + newrad) * Math.Cos(angleT);
                     var ly2 = y + (r + newrad) * Math.Sin(angleT);
                     if (i != skip && i != 5)
+                    {
                         CalculateStar(level + 1, lx2, ly2, newrad, i, !isRotate);
-
+                    }
                 }
             }
 
