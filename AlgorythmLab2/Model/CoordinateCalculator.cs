@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -12,13 +11,12 @@ namespace AlgorythmLab2.Model
         private double _scale = 0.35;
         private int _depth;
 
-        public List<Star> Stars { get; } = new List<Star>();
-
-        public List<Polyline> StarsPolylines { get; } = new List<Polyline>();
+        public List<Polyline> StarsPolylines { get; }
 
         public CoordinateCalculator(int depth)
         {
             //_scale = scale;
+            StarsPolylines = new List<Polyline>();
             _depth = depth;
         }
 
@@ -35,7 +33,6 @@ namespace AlgorythmLab2.Model
 
         public void Execute(double xmid, double ymid)
         {
-            Stars.Clear();
             StarsPolylines.Clear();
             CalculateStar(1, xmid, ymid, 100, -1);
         }
@@ -44,9 +41,8 @@ namespace AlgorythmLab2.Model
         {
             double offset = isRotate ? Math.PI / 2 : -Math.PI / 2;
             const double angle = 4 * Math.PI / 5;
-            Star star1 = new Star();
-            Polyline star2 = new Polyline();
-            star2.Stroke = Brushes.DarkRed;
+            Polyline star = new Polyline();
+            star.Stroke = Brushes.DarkRed;
             //image.Children.Add(star);
 
 
@@ -56,8 +52,7 @@ namespace AlgorythmLab2.Model
 
                 var lx = (int)(x + r * Math.Cos(angleT));
                 var ly = (int)(y + r * Math.Sin(angleT));
-                star2.Points.Add(new Point(lx, ly));
-                star1.AddPoint(new Point(lx, ly));
+                star.Points.Add(new Point(lx, ly));
 
                 if (level < _depth)
                 {
@@ -65,13 +60,13 @@ namespace AlgorythmLab2.Model
                     var lx2 = x + (r + newrad) * Math.Cos(angleT);
                     var ly2 = y + (r + newrad) * Math.Sin(angleT);
                     if (i != skip && i != 5)
+                    {
                         CalculateStar(level + 1, lx2, ly2, newrad, i, !isRotate);
-
+                    }
                 }
             }
 
-            Stars.Add(star1);
-            StarsPolylines.Add(star2);
+            StarsPolylines.Add(star);
         }
     }
 }
