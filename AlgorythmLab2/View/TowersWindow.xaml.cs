@@ -20,8 +20,7 @@ namespace AlgorythmLab2.View
     /// </summary>
     public partial class TowersWindow : Window
     {
-        int CurrentStep { get; set; } = 0;
-        HanoiAnimator hanoi;
+        public static int CurrentStep { get; set; } = 0;
 
         public TowersWindow()
         {
@@ -30,14 +29,12 @@ namespace AlgorythmLab2.View
         }
     private void NextStepButton_Click(object sender, RoutedEventArgs e)
         {
-            hanoi.MoveTheRing(1, CurrentStep);
-            CurrentStep++;
+            HanoiAnimator.MoveTheRing(1);
         }
 
         private void PreviousStepButton_Click(object sender, RoutedEventArgs e)
         {
-            hanoi.MoveTheRing(-1, CurrentStep);
-            CurrentStep--;
+            HanoiAnimator.MoveTheRing(-1);
         }
 
         private void EnterButton_Click(object sender, RoutedEventArgs e)
@@ -47,7 +44,7 @@ namespace AlgorythmLab2.View
                 MessageBox.Show("Задайте количество колец корректно и попробуйте снова", "Ошибка считывания количества колец", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-             hanoi = new HanoiAnimator(this, ringsCount, 0);
+             HanoiAnimator.HanoiAnimatorInit(this, ringsCount);
         }
     }
 }
