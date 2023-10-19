@@ -65,7 +65,7 @@ namespace AlgorythmLab2.Model
                     }
                 }
             }
-
+            
             StarsPolylines.Add(star);
         }
     }

@@ -39,7 +39,7 @@ namespace AlgorythmLab2.Model
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             
-            SolutionHanoibns2(countOfRings, stage.kernel1, stage.kernel2, stage.kernel3);
+            SolutionHanoibns(countOfRings, 0, 2, 1);
             
             stopwatch.Stop();
             time = stopwatch.ElapsedMilliseconds;
@@ -53,7 +53,7 @@ namespace AlgorythmLab2.Model
             if (k > 1) SolutionHanoibns(k - 1, c, b, a);
         }
         
-        private void SolutionHanoibns2(int k, Stack<int> kernel1, Stack<int> kernel2, Stack<int> kernel3)
+      /*  private void SolutionHanoibns2(int k, Stack<int> kernel1, Stack<int> kernel2, Stack<int> kernel3)
         {
             if (k > 1) SolutionHanoibns2(k - 1, kernel1, kernel3, kernel2);
             kernel2.Push(kernel1.Pop());
@@ -63,7 +63,7 @@ namespace AlgorythmLab2.Model
             stage.kernel3 = kernel3;
             stages.Add(stage);
             if (k > 1) SolutionHanoibns2(k - 1, kernel3, kernel2, kernel1);
-        }
+        } */
 
 
         public static double[] TakeMeasurements(int countOfRings)
